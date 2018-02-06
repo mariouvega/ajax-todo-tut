@@ -1,0 +1,31 @@
+<h1>My Todos</h1>
+
+<%= form_for Todo.new do |f| %>
+  <div class="form-group">
+    <%= f.text_field :description, placeholder: "What needs doing?" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :priority, placeholder: "Priority Level" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<!-- This code is being replaced by the partial we made in _todo.html.erb. This was done to refactor.
+  The line that replaced it is under it!
+<ul>
+  <%# @todos.each do |todo| %>
+  <li>
+    <%=# todo.description %><br>
+    <strong>priority: </strong><%= todo.priority %><br>
+    <%=# link_to 'done', todo_path(todo), method: 'delete' %>
+  </li>
+  <%# end %>
+</ul>  -->
+
+<ul>
+  <%= render @todos %>
+</ul>
